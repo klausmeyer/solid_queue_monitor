@@ -8,11 +8,11 @@
                show_status: true %>
 
     <% columns = [
-      { sort_key: nil, label: 'ID' },
+      { sort_key: :id, label: 'ID' },
       { sort_key: :class_name, label: 'Job' },
       { sort_key: :queue_name, label: 'Queue' },
       { sort_key: nil, label: 'Arguments' },
-      { sort_key: nil, label: 'Status' },
+      { sort_key: :status, label: 'Status' },
       { sort_key: :created_at, label: 'Created At' },
       { sort_key: nil, label: 'Actions' }
     ] %>

@@ -59,12 +59,12 @@
   </div>
 <% else %>
   <% columns = [
-    { sort_key: nil, label: 'Kind' },
+    { sort_key: :kind, label: 'Kind' },
     { sort_key: :hostname, label: 'Hostname' },
     { sort_key: nil, label: 'PID' },
     { sort_key: nil, label: 'Queues' },
     { sort_key: :last_heartbeat_at, label: 'Last Heartbeat' },
-    { sort_key: nil, label: 'Status' },
+    { sort_key: :status, label: 'Status' },
     { sort_key: nil, label: 'Jobs Processing' },
     { sort_key: nil, label: 'Actions' }
   ] %>
