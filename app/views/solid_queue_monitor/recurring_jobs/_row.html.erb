@@ -1,5 +1,5 @@
 <tr>
-  <td><%= job.key %></td>
+  <td><%= link_to job.key, queue_details_path(queue_name: 'solid_queue_recurring', arguments: job.class_name || job.command), class: 'job-class-link' %></td>
   <td><%= job.class_name || job.command %></td>
   <td><%= job.schedule %></td>
   <td><%= queue_link(job.queue_name) %></td>
