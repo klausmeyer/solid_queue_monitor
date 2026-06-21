@@ -2,7 +2,7 @@
 
 module SolidQueueMonitor
   class ScheduledJobsController < BaseController
-    SORTABLE_COLUMNS = %w[class_name queue_name scheduled_at].freeze
+    SORTABLE_COLUMNS = %w[id class_name queue_name status scheduled_at].freeze
 
     def index
       base_query = SolidQueue::ScheduledExecution.includes(:job)

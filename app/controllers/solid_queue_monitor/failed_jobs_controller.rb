@@ -2,7 +2,7 @@
 
 module SolidQueueMonitor
   class FailedJobsController < BaseController
-    SORTABLE_COLUMNS = %w[class_name queue_name created_at].freeze
+    SORTABLE_COLUMNS = %w[id class_name queue_name status created_at].freeze
 
     def index
       base_query = SolidQueue::FailedExecution.includes(:job)

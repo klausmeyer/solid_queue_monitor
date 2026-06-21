@@ -3,7 +3,7 @@
 module SolidQueueMonitor
   class QueuesController < BaseController
     SORTABLE_COLUMNS = %w[queue_name job_count].freeze
-    QUEUE_DETAILS_SORTABLE_COLUMNS = %w[class_name created_at].freeze
+    QUEUE_DETAILS_SORTABLE_COLUMNS = %w[id class_name created_at].freeze
 
     def index
       base_query = SolidQueue::Job.group(:queue_name)
