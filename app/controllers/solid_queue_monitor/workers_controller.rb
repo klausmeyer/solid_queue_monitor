@@ -2,7 +2,7 @@
 
 module SolidQueueMonitor
   class WorkersController < BaseController
-    SORTABLE_COLUMNS = %w[hostname last_heartbeat_at].freeze
+    SORTABLE_COLUMNS = %w[kind hostname last_heartbeat_at].freeze
 
     def index
       base_query = SolidQueue::Process.all
