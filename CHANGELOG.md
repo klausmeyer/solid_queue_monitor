@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.1] - 2026-07-13
+
+### Fixed
+
+- Activity chart no longer crashes the dashboard on multi-database setups where Solid Queue runs on a different engine than the host app's primary database (e.g. a MySQL primary with a dedicated PostgreSQL queue database via `config.solid_queue.connects_to`). The SQL dialect for the time-bucketing query is now detected from the Solid Queue model's own connection instead of `ActiveRecord::Base`, so a `PG::UndefinedFunction: function unix_timestamp(...) does not exist` error is no longer raised. Single-database and same-engine setups are unaffected. (#42)
+
+## [2.2.0] - 2026-06-24
+
+### Added
+
+- `SolidQueueMonitor.csrf_protection_enabled` config option (default `false`). When enabled, the engine no longer skips `verify_authenticity_token`: all dashboard forms embed an `authenticity_token`, `csrf_meta_tags` are added to the layout, and unverified `POST` requests to the destructive actions (retry / discard / pause / resume / execute / reject / remove / prune) are rejected. Disabled by default for backward compatibility, since the gem does not assume the host app has a session store. See the new "CSRF Protection" section in the README for requirements.
+
 ## [2.1.0] - 2026-05-13
 
 ### Added
